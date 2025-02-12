@@ -1,0 +1,145 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fce0e0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Контейнер для карток */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 стовпчики за замовчуванням */
+    gap: 20px; /* Відступ між картками */
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+/* Стилі для картки */
+.card {
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+/* Перевертання при наведенні */
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Передня та задня сторони валентинки */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Передня сторона (червоне серце) */
+.card-front {
+    background-color: white;
+    color: red;
+}
+
+/* Задня сторона (біле серце) */
+.card-back {
+    background-color: red;
+    color: white;
+    transform: rotateY(180deg);
+    font-weight: bold;
+}
+
+/* Для всіх <p> в картках */
+.card-front p, .card-back p {
+    margin-bottom: 25%; /* Відступ знизу 5 пікселів */  
+}
+
+
+/* Стилі для серця */
+.red-heart {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 60% 65%, #f06 64%, transparent 65%) top left/50% 50%, 
+                radial-gradient(circle at 40% 65%, #f06 64%, transparent 65%) top right/50% 50%, 
+                conic-gradient(from -45deg at 50% 85.5%, #f06 90deg, transparent 0) bottom/100% 50%;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Стилі для білого серця */
+.white-heart {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 60% 65%, #fff 64%, transparent 65%) top left/50% 50%, 
+                radial-gradient(circle at 40% 65%, #fff 64%, transparent 65%) top right/50% 50%, 
+                conic-gradient(from -45deg at 50% 85.5%, #fff 90deg, transparent 0) bottom/100% 50%;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+}
+
+
+/* Адаптивний дизайн для мобільних пристроїв */
+
+/* Для екранів більше 1200px - 3 стовпці */
+@media (min-width: 1200px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* Для екранів до 768px - 1 стовпчик з великими валентинками та скролом */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* 1 стовпчик */
+        height: 80vh; /* Збільшена висота контейнера для скролінгу */
+        overflow-y: auto; /* Дозволяє вертикальний скрол */
+        padding-right: 10px; /* Додаємо відступ для скролу */
+    }
+
+    .card {
+        width: 350px; /* Збільшена ширина карток */
+        height: 350px; /* Збільшена висота карток */
+    }
+}
+
+/* Для екранів до 480px - 1 стовпчик з ще більшими валентинками */
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: 1fr; /* 1 стовпчик */
+        height: 85vh; /* Збільшена висота контейнера для скролінгу */
+        overflow-y: auto; /* Дозволяє вертикальний скрол */
+        padding-right: 10px;
+    }
+
+    .card {
+        width: 400px; /* Ще більша ширина карток */
+        height: 400px; /* Ще більша висота карток */
+    }
+}
