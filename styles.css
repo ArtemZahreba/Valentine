@@ -87,7 +87,41 @@ button {
     font-size: 26px;
 }
 
+/* Стилі для футера */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #f1f1f1;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    color: #c86c9a;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
 /* **Медіа-запити для мобільних пристроїв** */
+
+@media (max-width: 1200px) {
+    .heart {
+        width: 60%;
+    }
+    button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+    .welcome-text {
+        font-size: 20px;
+    }
+}
+
 @media (max-width: 768px) {
     .heart {
         width: 60%;

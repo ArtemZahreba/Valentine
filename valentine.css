@@ -69,7 +69,8 @@ body {
 
 /* Для всіх <p> в картках */
 .card-front p, .card-back p {
-    margin-bottom: 25%; /* Відступ знизу 5 пікселів */  
+    width: 90%;
+    margin-bottom: 30%; /* Відступ знизу 5 пікселів */  
 }
 
 
