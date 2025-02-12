@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Валентинки у формі серця</title>
+    <title>Валентинкa</title>
+    <link rel="icon" type="image/png" href="hert.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="valentine.css">
 </head>
