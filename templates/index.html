@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Валентинки у формі серця</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='valentine.css') }}">
+</head>
+<body>
+    {% if show_valentines %}
+        <div class="container">
+            {% for a in range(1, 10) %}
+                <div class="card">
+                    <div class="card-inner">
+                        <!-- Червоне серце -->
+                        <div class="card-front">
+                            <div class="red-heart">
+                                <p>💖 Валентинка {{ a }} 💖</p>
+                            </div>
+                        </div>
+                        <!-- Біле серце -->
+                        <div class="card-back">
+                            <div class="white-heart">
+                                <p>З любов'ю! ❤️</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="heart">
+            <p class="welcome-text">Вам прийшли валентинки! Хотіли б ви їх побачити?</p>
+            <form method="post">
+                <button type="submit" name="show_valentines">Так</button>
+            </form>
+        </div>
+    {% endif %}
+</body>
+</html>
